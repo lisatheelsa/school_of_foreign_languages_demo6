@@ -1,2 +1,2 @@
-# school_of_foreign_languages_demo6
+# school_of_foreign_languages
 Convenient app for languages lovers
