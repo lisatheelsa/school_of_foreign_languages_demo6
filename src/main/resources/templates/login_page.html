@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: grey url(https://avatars.mds.yandex.net/i?id=a0e693d513a0653310b1b47d448f084f6763f409-4361307-images-thumbs&n=13) center center / cover no-repeat;
+            background-blend-mode: screen; /*multiply - умножает цвета фона и изображения, screen - показывает фон сквозь цвет*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            margin: -20px 0 50px;
+        }
+        h1 {
+            font-weight: bold;
+            margin: 0;
+            color: darkred;
+        }
+        h3 {
+            font-weight: normal;
+            font-style: italic;
+        }
+        .sign-in-container h1, h4{
+            color: darkred;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 20px 0 30px;
+        }
+        button {
+            border-radius: 20px;
+            border: 1px solid #135267;
+            background-color: darkred;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+        button:hover {
+            background-color: white; /* задаём желаемый цвет при наведении */
+            color: darkred;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        form {
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+        input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+        }
+        .container {
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+            0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+        footer {
+            background-color: #1b5569;
+            color: #fff;
+            font-size: 14px;
+            bottom: 0;
+            position: fixed;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 999;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+    <title>welcome</title>
+</head>
+<body>
+<div class="container">
+        <form th:action="@{/login_page}" method="post" >
+            <h1>Welcome ;)</h1>
+            <input type="text" id="username" name="username" placeholder="username" required/>
+            <input type="password" id="password" name="password" placeholder="password" required/>
+            <button id="btn_log_2" type="submit" class="btn-light">Log in</button>
+            <h3>New here?  <a href="/register">  Sign up</a></h3>
+            <div th:if="${param.error}" >
+                <h4>Your password is incorrect. Try again)</h4>
+            </div>
+        </form>
+</div>
+</body>
+</html>

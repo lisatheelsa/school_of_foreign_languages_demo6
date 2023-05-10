@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="form-box login">
+  <h2>Создай своего персонажа)r</h2>
+  <form th:action="@{/register}" method="post">
+    <div class="input-box">
+      <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+      <input type="text" id="name" name="name" required/>
+    </div>
+    <div class="input-box">
+      <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+      <input type="password" id="password" name="password" required/>
+    </div>
+    <div class="input-box_role">
+      <span class="icon" style="margin-left: 24%; margin-top: -3%"><ion-icon name="reader-outline"></ion-icon></span>
+      <select id="roles" name="roles" class="custom-select" style="margin-left: 30%">
+        <option selected>Select Role: </option>
+        <option value="ROLE_ADMIN">Administrator</option>
+        <option value="ROLE_USER">User</option>
+      </select>
+    </div>
+    <button id="btn_register" type="submit">Register</button>
+  </form>
+</div>
+</body>
+</html>
